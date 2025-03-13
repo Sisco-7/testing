@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admissions - Winsome Model Schools</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Dark Mode Toggle -->
+  <div class="dark-mode-toggle">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html"><img src="winsomite.png" alt="Winsome Model Schools Logo" loading="lazy"></a>
+      </div>
+      <div class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="faculty.html">Faculty & Staff</a></li>
+          <li><a href="facilities.html">Facilities</a></li>
+          <li><a href="student-life.html">Student Life</a></li>
+          <li><a href="news.html">News & Events</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#student-portal" onclick="openStudentPortal()">Student Portal</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Admissions Section -->
+  <section id="admissions" class="container">
+    <h2 class="section-title">Admissions</h2>
+    <div class="admissions-content">
+      <p>Join Winsome Model Schools and embark on a journey of academic excellence and personal growth. Our admissions process is designed to be transparent, straightforward, and supportive, ensuring every applicant has the best chance to succeed.</p>
+      <p>We welcome students from diverse backgrounds, offering scholarships and financial aid to those in need. Follow the steps below to begin your application today.</p>
+    </div>
+
+    <!-- Admission Process -->
+    <h3 class="section-title">Admission Process</h3>
+    <div class="admissions-grid">
+      <div class="admissions-card">
+        <h3>Step 1: Application Form</h3>
+        <p>Purchase and complete the application form online or at our admissions office.</p>
+        <p>Cost: ₦5,000</p>
+        <a href="#" class="btn">Download Form</a>
+      </div>
+      <div class="admissions-card">
+        <h3>Step 2: Submit Documents</h3>
+        <p>Submit the required documents, including birth certificate, school records, and passport photographs.</p>
+        <p>Deadline: Rolling admissions</p>
+        <a href="#" class="btn">Upload Documents</a>
+      </div>
+      <div class="admissions-card">
+        <h3>Step 3: Entrance Exam</h3>
+        <p>Attend the entrance exam, which tests core subjects like Mathematics, English, and General Knowledge.</p>
+        <p>Exam Date: Monthly</p>
+        <a href="#" class="btn">Schedule Exam</a>
+      </div>
+      <div class="admissions-card">
+        <h3>Step 4: Interview</h3>
+        <p>Participate in an interview with our admissions panel to assess fit and potential.</p>
+        <p>Duration: 30 minutes</p>
+        <a href="#" class="btn">Book Interview</a>
+      </div>
+      <div class="admissions-card">
+        <h3>Step 5: Registration</h3>
+        <p>Complete registration by paying the acceptance fee and enrolling in classes.</p>
+        <p>Acceptance Fee: ₦50,000</p>
+        <a href="#" class="btn">Pay Fee</a>
+      </div>
+    </div>
+
+    <!-- Requirements -->
+    <h3 class="section-title">Admission Requirements</h3>
+    <div class="requirements-grid">
+      <div class="requirement-card">
+        <h4>Junior Secondary (JSS1-JSS3)</h4>
+        <ul>
+          <li>Birth Certificate</li>
+          <li>Primary School Records</li>
+          <li>Passport Photographs (4 copies)</li>
+          <li>Medical Report</li>
+          <li>Application Fee Receipt</li>
+        </ul>
+      </div>
+      <div class="requirement-card">
+        <h4>Senior Secondary (SS1-SS3)</h4>
+        <ul>
+          <li>Birth Certificate</li>
+          <li>JSS Certificate or Transfer Certificate</li>
+          <li>Passport Photographs (4 copies)</li>
+          <li>Medical Report</li>
+          <li>Application Fee Receipt</li>
+        </ul>
+      </div>
+      <div class="requirement-card">
+        <h4>Transfer Students</h4>
+        <ul>
+          <li>Birth Certificate</li>
+          <li>Previous School Records</li>
+          <li>Transfer Certificate</li>
+          <li>Passport Photographs (4 copies)</li>
+          <li>Medical Report</li>
+          <li>Application Fee Receipt</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Fees Calculator -->
+    <h3 class="section-title">Fees Calculator</h3>
+    <div class="fees-calculator">
+      <div class="calculator-form">
+        <label for="fee-level">Select Level:</label>
+        <select id="fee-level" onchange="calculateFees()">
+          <option value="junior">Junior Secondary (₦500,000 per term)</option>
+          <option value="senior">Senior Secondary (₦600,000 per term)</option>
+          <option value="boarding">Boarding (Additional ₦200,000 per term)</option>
+        </select>
+        <label for="extra-fees">Additional Fees (e.g., Uniforms, Books):</label>
+        <input type="number" id="extra-fees" min="0" placeholder="Enter amount in ₦">
+        <button onclick="calculateFees()">Calculate Total</button>
+      </div>
+      <div class="calculator-result">
+        <p>Base Fees: <span id="base-fees">₦500,000</span></p>
+        <p>Additional Fees: <span id="additional-fees">₦0</span></p>
+        <p>Total Fees (per term): <span id="fee-result">₦500,000</span></p>
+      </div>
+    </div>
+
+    <!-- Payment Gateway Mockup -->
+    <h3 class="section-title">Make a Payment</h3>
+    <div class="payment-gateway">
+      <form id="payment-form" onsubmit="handlePayment(event)">
+        <label for="payment-amount">Amount (₦):</label>
+        <input type="number" id="payment-amount" min="1000" placeholder="Enter amount" required>
+        <label for="payment-method">Payment Method:</label>
+        <select id="payment-method" required>
+          <option value="card">Credit/Debit Card</option>
+          <option value="bank">Bank Transfer</option>
+          <option value="mobile">Mobile Money</option>
+        </select>
+        <label for="card-number">Card Number (Mock):</label>
+        <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+        <label for="card-expiry">Expiry Date:</label>
+        <input type="text" id="card-expiry" placeholder="MM/YY" required>
+        <label for="card-cvv">CVV:</label>
+        <input type="text" id="card-cvv" placeholder="123" required>
+        <button type="submit">Process Payment</button>
+      </form>
+      <p id="payment-message"></p>
+    </div>
+
+    <!-- Admission Form -->
+    <h3 class="section-title">Apply Now</h3>
+    <div class="admission-form">
+      <form id="admission-form" onsubmit="handleAdmissionSubmit(event)">
+        <div class="form-group">
+          <label for="student-name">Student's Full Name:</label>
+          <input type="text" id="student-name" name="name" placeholder="Full Name" required>
+        </div>
+        <div class="form-group">
+          <label for="parent-name">Parent/Guardian Name:</label>
+          <input type="text" id="parent-name" name="parent-name" placeholder="Parent/Guardian Name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+        </div>
+        <div class="form-group">
+          <label for="level">Applying for:</label>
+          <select id="level" name="level" required>
+            <option value="jss1">JSS1</option>
+            <option value="jss2">JSS2</option>
+            <option value="jss3">JSS3</option>
+            <option value="ss1">SS1</option>
+            <option value="ss2">SS2</option>
+            <option value="ss3">SS3</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="documents">Upload Documents:</label>
+          <input type="file" id="documents" name="documents" accept=".pdf,.jpg,.png" multiple required>
+        </div>
+        <button type="submit">Submit Application</button>
+      </form>
+      <p id="form-message"></p>
+    </div>
+
+    <!-- Financial Aid -->
+    <h3 class="section-title">Financial Aid & Scholarships</h3>
+    <div class="financial-aid">
+      <p>We offer various scholarships and financial aid options to support deserving students.</p>
+      <ul>
+        <li><strong>Merit Scholarship:</strong> For students with outstanding academic performance (up to 50% fee waiver).</li>
+        <li><strong>Need-Based Aid:</strong> For families with demonstrated financial need (up to 30% fee waiver).</li>
+        <li><strong>Sports Scholarship:</strong> For exceptional athletes (up to 20% fee waiver).</li>
+        <li><strong>Community Service Award:</strong> For students with significant community involvement (up to 15% fee waiver).</li>
+      </ul>
+      <a href="#" class="btn">Apply for Financial Aid</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>Winsome Model Schools</h3>
+          <p>Araromi Street, Ifako-Jaiye, Ojooromo, Lagos, Nigeria</p>
+          <p>Phone: +234 803 231 9017</p>
+          <p>Email: info@winsomemodelschools.org</p>
+          <p>Hours: Mon-Fri 8am-6pm, Sat 9am-2pm</p>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <a href="about.html">About Us</a>
+          <a href="academics.html">Academics</a>
+          <a href="admissions.html">Admissions</a>
+          <a href="faculty.html">Faculty & Staff</a>
+          <a href="facilities.html">Facilities</a>
+          <a href="student-life.html">Student Life</a>
+          <a href="news.html">News & Events</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-column">
+          <h3>Explore More</h3>
+          <a href="news.html#calendar">Event Calendar</a>
+          <a href="facilities.html#virtual-tour">Virtual Tour</a>
+          <a href="student-life.html#gallery">Student Gallery</a>
+          <a href="contact.html#newsletter">Newsletter Signup</a>
+        </div>
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f animate-icon"></i></a>
+            <a href="#"><i class="fab fa-twitter animate-icon"></i></a>
+            <a href="#"><i class="fab fa-instagram animate-icon"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in animate-icon"></i></a>
+            <a href="#"><i class="fab fa-youtube animate-icon"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Winsome Model Schools. All Rights Reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">FAQs</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

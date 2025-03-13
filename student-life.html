@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Life - Winsome Model Schools</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Dark Mode Toggle -->
+  <div class="dark-mode-toggle">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html"><img src="winsomite.png" alt="Winsome Model Schools Logo" loading="lazy"></a>
+      </div>
+      <div class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="faculty.html">Faculty & Staff</a></li>
+          <li><a href="facilities.html">Facilities</a></li>
+          <li><a href="student-life.html">Student Life</a></li>
+          <li><a href="news.html">News & Events</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#student-portal" onclick="openStudentPortal()">Student Portal</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Student Life Section -->
+  <section id="student-life" class="container">
+    <h2 class="section-title">Student Life</h2>
+    <div class="student-life-content">
+      <p>At Winsome Model Schools, student life is vibrant and diverse, offering a wide range of activities to complement academic learning. Our students thrive in a supportive environment that encourages creativity, teamwork, and personal growth.</p>
+      <p>From sports and clubs to cultural events and leadership programs, we ensure every student has the opportunity to explore their passions and develop essential life skills.</p>
+    </div>
+
+    <!-- Activities Grid -->
+    <div class="activities-grid">
+      <div class="activity-card">
+        <h4>Sports</h4>
+        <p>Participate in football, basketball, swimming, and track and field with professional coaching.</p>
+        <p>Events: Annual Sports Day, Inter-House Competitions</p>
+        <a href="#" class="btn">Join a Team</a>
+      </div>
+      <div class="activity-card">
+        <h4>Clubs</h4>
+        <p>Choose from debate, science, drama, robotics, music, and art clubs to pursue your interests.</p>
+        <p>Features: Weekly meetings, project showcases</p>
+        <a href="#" class="btn">Explore Clubs</a>
+      </div>
+      <div class="activity-card">
+        <h4>Events</h4>
+        <p>Enjoy cultural day, talent shows, career fairs, and graduation ceremonies.</p>
+        <p>Highlights: Guest speakers, performances</p>
+        <a href="news.html#calendar" class="btn">View Calendar</a>
+      </div>
+      <div class="activity-card">
+        <h4>Leadership Programs</h4>
+        <p>Develop leadership skills through student council, peer mentoring, and community service.</p>
+        <p>Features: Workshops, leadership camps</p>
+        <a href="#" class="btn">Get Involved</a>
+      </div>
+    </div>
+
+    <!-- Event Countdown -->
+    <h3 class="section-title">Upcoming Events</h3>
+    <div class="event-countdown">
+      <div class="countdown-item">
+        <h4>Next Event: Sports Day</h4>
+        <p>Date: April 15, 2025</p>
+        <div id="countdown" class="countdown"></div>
+      </div>
+      <div class="countdown-item">
+        <h4>Cultural Day</h4>
+        <p>Date: May 10, 2025</p>
+        <div id="countdown-cultural" class="countdown"></div>
+      </div>
+    </div>
+
+    <!-- Student Blogs -->
+    <h3 class="section-title">Student Blogs</h3>
+    <div class="blogs-grid">
+      <div class="blog-card">
+        <img src="https://via.placeholder.com/300x200?text=Blog+Image" alt="Blog Image" loading="lazy">
+        <h4>My Journey in the Debate Club</h4>
+        <p>By Tolu Adebayo - March 1, 2025</p>
+        <p>Discover how joining the debate club helped me build confidence and critical thinking skills.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+      <div class="blog-card">
+        <img src="https://via.placeholder.com/300x200?text=Blog+Image" alt="Blog Image" loading="lazy">
+        <h4>Winning the Science Fair</h4>
+        <p>By Chika Okonkwo - February 15, 2025</p>
+        <p>Learn about my experience creating a solar-powered car for the school science fair.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+      <div class="blog-card">
+        <img src="https://via.placeholder.com/300x200?text=Blog+Image" alt="Blog Image" loading="lazy">
+        <h4>Life as a Student Leader</h4>
+        <p>By David Oluwaseun - January 20, 2025</p>
+        <p>Insights into leading the student council and organizing community service projects.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+
+    <!-- Photo Gallery -->
+    <h3 class="section-title">Student Gallery</h3>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://via.placeholder.com/300x200?text=Gallery+Image" alt="Gallery Image" loading="lazy">
+        <p>Sports Day 2024</p>
+      </div>
+      <div class="gallery-item">
+        <img src="https://via.placeholder.com/300x200?text=Gallery+Image" alt="Gallery Image" loading="lazy">
+        <p>Cultural Day 2024</p>
+      </div>
+      <div class="gallery-item">
+        <img src="https://via.placeholder.com/300x200?text=Gallery+Image" alt="Gallery Image" loading="lazy">
+        <p>Science Fair 2024</p>
+      </div>
+      <div class="gallery-item">
+        <img src="https://via.placeholder.com/300x200?text=Gallery+Image" alt="Gallery Image" loading="lazy">
+        <p>Graduation 2024</p>
+      </div>
+      <div class="gallery-item">
+        <img src="https://via.placeholder.com/300x200?text=Gallery+Image" alt="Gallery Image" loading="lazy">
+        <p>Art Exhibition 2024</p>
+      </div>
+    </div>
+
+    <!-- Student Life FAQ -->
+    <h3 class="section-title">Frequently Asked Questions</h3>
+    <div class="faq-section">
+      <div class="faq-item">
+        <h4>How do I join a club?</h4>
+        <p>Contact the student affairs office or speak to your class teacher to register for a club.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Are there sports tryouts?</h4>
+        <p>Yes, tryouts are held at the beginning of each term. Check the event calendar for dates.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can parents attend events?</h4>
+        <p>Yes, parents are welcome at all major events. Invitations are sent via email.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How do I submit a blog post?</h4>
+        <p>Submit your blog to the student council or email it to studentlife@winsomemodelschools.org.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>Winsome Model Schools</h3>
+          <p>Araromi Street, Ifako-Jaiye, Ojooromo, Lagos, Nigeria</p>
+          <p>Phone: +234 803 231 9017</p>
+          <p>Email: info@winsomemodelschools.org</p>
+          <p>Hours: Mon-Fri 8am-6pm, Sat 9am-2pm</p>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <a href="about.html">About Us</a>
+          <a href="academics.html">Academics</a>
+          <a href="admissions.html">Admissions</a>
+          <a href="faculty.html">Faculty & Staff</a>
+          <a href="facilities.html">Facilities</a>
+          <a href="student-life.html">Student Life</a>
+          <a href="news.html">News & Events</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-column">
+          <h3>Explore More</h3>
+          <a href="news.html#calendar">Event Calendar</a>
+          <a href="facilities.html#virtual-tour">Virtual Tour</a>
+          <a href="student-life.html#gallery">Student Gallery</a>
+          <a href="contact.html#newsletter">Newsletter Signup</a>
+        </div>
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f animate-icon"></i></a>
+            <a href="#"><i class="fab fa-twitter animate-icon"></i></a>
+            <a href="#"><i class="fab fa-instagram animate-icon"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in animate-icon"></i></a>
+            <a href="#"><i class="fab fa-youtube animate-icon"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Winsome Model Schools. All Rights Reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">FAQs</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

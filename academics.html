@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academics - Winsome Model Schools</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Dark Mode Toggle -->
+  <div class="dark-mode-toggle">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html"><img src="winsomite.png" alt="Winsome Model Schools Logo" loading="lazy"></a>
+      </div>
+      <div class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="faculty.html">Faculty & Staff</a></li>
+          <li><a href="facilities.html">Facilities</a></li>
+          <li><a href="student-life.html">Student Life</a></li>
+          <li><a href="news.html">News & Events</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#student-portal" onclick="openStudentPortal()">Student Portal</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Academics Section -->
+  <section id="academics" class="container">
+    <h2 class="section-title">Academics at Winsome</h2>
+    <div class="academics-content">
+      <p>Our curriculum is meticulously designed to align with WAEC and NECO standards while fostering critical thinking, creativity, and global readiness. We offer a wide range of subjects across Science, Arts, Humanities, and Vocational streams, ensuring every student finds their path to success.</p>
+      <p>With a focus on experiential learning, our students engage in hands-on projects, research, and collaborative activities that prepare them for higher education and beyond. Our academic programs are supported by advanced technology, dedicated faculty, and a robust assessment system.</p>
+    </div>
+
+    <!-- Curriculum Filter -->
+    <div class="curriculum-filter">
+      <h3>Filter by Stream</h3>
+      <select id="curriculum-filter" onchange="filterCurriculum()">
+        <option value="all">All Subjects</option>
+        <option value="science">Science</option>
+        <option value="arts">Arts & Humanities</option>
+        <option value="vocational">Vocational</option>
+      </select>
+    </div>
+
+    <!-- Curriculum Grid -->
+    <div class="academics-grid" id="curriculum-grid">
+      <div class="academics-card" data-category="science">
+        <h3>Physics</h3>
+        <p>Explore the fundamental laws of nature, including mechanics, electricity, and magnetism.</p>
+        <ul>
+          <li>Topics: Mechanics, Thermodynamics, Waves</li>
+          <li>Practical: Experiments on motion, circuits, and optics</li>
+          <li>Assessment: Weekly quizzes, term projects</li>
+        </ul>
+        <a href="#" class="download-syllabus">Download Syllabus (PDF)</a>
+      </div>
+      <div class="academics-card" data-category="science">
+        <h3>Chemistry</h3>
+        <p>Master chemical reactions, organic chemistry, and laboratory techniques.</p>
+        <ul>
+          <li>Topics: Atomic Structure, Chemical Bonding, Stoichiometry</li>
+          <li>Practical: Titration, synthesis of compounds</li>
+          <li>Assessment: Lab reports, mid-term exams</li>
+        </ul>
+        <a href="#" class="download-syllabus">Download Syllabus (PDF)</a>
+      </div>
+      <div class="academics-card" data-category="science">
+        <h3>Biology</h3>
+        <p>Study living organisms, ecosystems, and human anatomy.</p>
+        <ul>
+          <li>Topics: Cell Biology, Genetics, Ecology</li>
+          <li>Practical: Dissection, microscope analysis</li>
+          <li>Assessment: Research papers, final exams</li>
+        </ul>
+        <a href="#" class="download-syllabus">Download Syllabus (PDF)</a>
+      </div>
+      <div class="academics-card" data-category="arts">
+        <h3>Literature</h3>
+        <p>Analyze classic and contemporary works, focusing on critical interpretation.</p>
+        <ul>
+          <li>Topics: Shakespeare, African Literature, Poetry</li>
+          <li>Practical: Literary analysis, creative writing</li>
+          <li>Assessment: Essays, oral presentations</li>
+        </ul>
+        <a href="#" class="download-syllabus">Download Syllabus (PDF)</a>
+      </div>
+      <div class="academics-card" data-category="arts">
+        <h3>History</h3>
+        <p>Explore global and Nigerian history, from ancient civilizations to modern times.</p>
+        <ul>
+          <li>Topics: Nigerian Independence, World Wars, Colonialism</li>
+          <li>Practical: Historical debates, timeline projects</li>
+          <li>Assessment: Research essays, group discussions</li>
+        </ul>
+        <a href="#" class="download-syllabus">Download Syllabus (PDF)</a>
+      </div>
+      <div class="academics-card" data-category="arts">
+        <h3>Government</h3>
+        <p>Understand political systems, governance, and civic responsibilities.</p>
+        <ul>
+          <li>Topics: Democracy, Nigerian Constitution, International Relations</li>
+          <li>Practical: Mock elections, policy analysis</li>
+          <li>Assessment: Debates, written exams</li>
+        </ul>
+        <a href="#" class="download-syllabus">Download Syllabus (PDF)</a>
+      </div>
+      <div class="academics-card" data-category="vocational">
+        <h3>Information Technology</h3>
+        <p>Learn coding, software development, and digital literacy.</p>
+        <ul>
+          <li>Topics: Python, Web Development, Cybersecurity</li>
+          <li>Practical: Building apps, website projects</li>
+          <li>Assessment: Coding challenges, project demos</li>
+        </ul>
+        <a href="#" class="download-syllabus">Download Syllabus (PDF)</a>
+      </div>
+      <div class="academics-card" data-category="vocational">
+        <h3>Home Economics</h3>
+        <p>Develop skills in nutrition, sewing, and household management.</p>
+        <ul>
+          <li>Topics: Food Preparation, Textile Design, Budgeting</li>
+          <li>Practical: Cooking sessions, sewing projects</li>
+          <li>Assessment: Practical exams, portfolio</li>
+        </ul>
+        <a href="#" class="download-syllabus">Download Syllabus (PDF)</a>
+      </div>
+      <div class="academics-card" data-category="vocational">
+        <h3>Technical Drawing</h3>
+        <p>Master engineering drawing, design, and architectural drafting.</p>
+        <ul>
+          <li>Topics: Orthographic Projection, Isometric Drawing</li>
+          <li>Practical: Drafting blueprints, 3D modeling</li>
+          <li>Assessment: Drawing assignments, final projects</li>
+        </ul>
+        <a href="#" class="download-syllabus">Download Syllabus (PDF)</a>
+      </div>
+    </div>
+
+    <!-- Academic Schedule -->
+    <h3 class="section-title">Academic Schedule</h3>
+    <div class="schedule-tabs">
+      <div class="tab-buttons">
+        <button class="tab-btn active" onclick="openTab('junior')">Junior Secondary</button>
+        <button class="tab-btn" onclick="openTab('senior')">Senior Secondary</button>
+      </div>
+      <div id="junior" class="tab-content active">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Monday</th>
+              <th>Tuesday</th>
+              <th>Wednesday</th>
+              <th>Thursday</th>
+              <th>Friday</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>8:00 AM - 9:00 AM</td>
+              <td>Mathematics</td>
+              <td>English</td>
+              <td>Science</td>
+              <td>Social Studies</td>
+              <td>Physical Education</td>
+            </tr>
+            <tr>
+              <td>9:00 AM - 10:00 AM</td>
+              <td>English</td>
+              <td>Mathematics</td>
+              <td>ICT</td>
+              <td>Science</td>
+              <td>Creative Arts</td>
+            </tr>
+            <tr>
+              <td>10:00 AM - 11:00 AM</td>
+              <td>Science</td>
+              <td>Social Studies</td>
+              <td>Mathematics</td>
+              <td>English</td>
+              <td>Vocational Studies</td>
+            </tr>
+            <tr>
+              <td>11:00 AM - 12:00 PM</td>
+              <td>Break</td>
+              <td>Break</td>
+              <td>Break</td>
+              <td>Break</td>
+              <td>Break</td>
+            </tr>
+            <tr>
+              <td>12:00 PM - 1:00 PM</td>
+              <td>ICT</td>
+              <td>Creative Arts</td>
+              <td>Social Studies</td>
+              <td>Mathematics</td>
+              <td>Science</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="senior" class="tab-content">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Monday</th>
+              <th>Tuesday</th>
+              <th>Wednesday</th>
+              <th>Thursday</th>
+              <th>Friday</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>8:00 AM - 9:00 AM</td>
+              <td>Physics</td>
+              <td>Chemistry</td>
+              <td>Biology</td>
+              <td>Literature</td>
+              <td>Government</td>
+            </tr>
+            <tr>
+              <td>9:00 AM - 10:00 AM</td>
+              <td>Mathematics</td>
+              <td>English</td>
+              <td>Economics</td>
+              <td>Geography</td>
+              <td>ICT</td>
+            </tr>
+            <tr>
+              <td>10:00 AM - 11:00 AM</td>
+              <td>Chemistry</td>
+              <td>Physics</td>
+              <td>Mathematics</td>
+              <td>English</td>
+              <td>Vocational Studies</td>
+            </tr>
+            <tr>
+              <td>11:00 AM - 12:00 PM</td>
+              <td>Break</td>
+              <td>Break</td>
+              <td>Break</td>
+              <td>Break</td>
+              <td>Break</td>
+            </tr>
+            <tr>
+              <td>12:00 PM - 1:00 PM</td>
+              <td>English</td>
+              <td>Economics</td>
+              <td>Geography</td>
+              <td>Mathematics</td>
+              <td>Physics</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Academic Resources -->
+    <h3 class="section-title">Academic Resources</h3>
+    <div class="resources-grid">
+      <div class="resource-card">
+        <h4>E-Library Access</h4>
+        <p>Access over 10,000 digital books, journals, and study materials through our online portal.</p>
+        <a href="#" class="btn">Visit E-Library</a>
+      </div>
+      <div class="resource-card">
+        <h4>Past Question Papers</h4>
+        <p>Download past WAEC and NECO question papers to prepare for exams.</p>
+        <a href="#" class="btn">Download Papers</a>
+      </div>
+      <div class="resource-card">
+        <h4>Study Guides</h4>
+        <p>Comprehensive study guides for all subjects, created by our expert faculty.</p>
+        <a href="#" class="btn">Access Guides</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>Winsome Model Schools</h3>
+          <p>Araromi Street, Ifako-Jaiye, Ojooromo, Lagos, Nigeria</p>
+          <p>Phone: +234 803 231 9017</p>
+          <p>Email: info@winsomemodelschools.org</p>
+          <p>Hours: Mon-Fri 8am-6pm, Sat 9am-2pm</p>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <a href="about.html">About Us</a>
+          <a href="academics.html">Academics</a>
+          <a href="admissions.html">Admissions</a>
+          <a href="faculty.html">Faculty & Staff</a>
+          <a href="facilities.html">Facilities</a>
+          <a href="student-life.html">Student Life</a>
+          <a href="news.html">News & Events</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-column">
+          <h3>Explore More</h3>
+          <a href="news.html#calendar">Event Calendar</a>
+          <a href="facilities.html#virtual-tour">Virtual Tour</a>
+          <a href="student-life.html#gallery">Student Gallery</a>
+          <a href="contact.html#newsletter">Newsletter Signup</a>
+        </div>
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f animate-icon"></i></a>
+            <a href="#"><i class="fab fa-twitter animate-icon"></i></a>
+            <a href="#"><i class="fab fa-instagram animate-icon"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in animate-icon"></i></a>
+            <a href="#"><i class="fab fa-youtube animate-icon"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Winsome Model Schools. All Rights Reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">FAQs</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News & Events - Winsome Model Schools</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Dark Mode Toggle -->
+  <div class="dark-mode-toggle">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html"><img src="winsomite.png" alt="Winsome Model Schools Logo" loading="lazy"></a>
+      </div>
+      <div class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="faculty.html">Faculty & Staff</a></li>
+          <li><a href="facilities.html">Facilities</a></li>
+          <li><a href="student-life.html">Student Life</a></li>
+          <li><a href="news.html">News & Events</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#student-portal" onclick="openStudentPortal()">Student Portal</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- News Section -->
+  <section id="news" class="container">
+    <h2 class="section-title">News & Events</h2>
+    <div class="news-content">
+      <p>Stay updated with the latest news and events at Winsome Model Schools. From academic achievements to extracurricular highlights, our community is always buzzing with activity.</p>
+      <p>Explore our event calendar, read detailed news articles, and search for specific updates using the tools below.</p>
+    </div>
+
+    <!-- News Search and Filter -->
+    <div class="news-search-filter">
+      <div class="search-bar">
+        <input type="text" id="news-search" placeholder="Search news or events..." onkeyup="searchNews()">
+        <i class="fas fa-search"></i>
+      </div>
+      <div class="news-filter">
+        <label for="news-filter">Filter by Category:</label>
+        <select id="news-filter" onchange="filterNews()">
+          <option value="all">All</option>
+          <option value="academic">Academic</option>
+          <option value="sports">Sports</option>
+          <option value="events">Events</option>
+          <option value="achievements">Achievements</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- News Carousel -->
+    <div class="news-carousel" id="news-carousel">
+      <div class="news-slide active">
+        <img src="https://via.placeholder.com/600x400?text=Sports+Day" alt="Sports Day" loading="lazy">
+        <h4>Annual Sports Day 2025</h4>
+        <p>Date: April 15, 2025 - Join us for an exciting day of competitions and fun!</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+      <div class="news-slide">
+        <img src="https://via.placeholder.com/600x400?text=Science+Fair" alt="Science Fair" loading="lazy">
+        <h4>Science Fair 2025</h4>
+        <p>Date: May 10, 2025 - Showcase your innovative projects and win prizes!</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+      <div class="news-slide">
+        <img src="https://via.placeholder.com/600x400?text=Cultural+Day" alt="Cultural Day" loading="lazy">
+        <h4>Cultural Day Celebration</h4>
+        <p>Date: June 5, 2025 - Celebrate diversity with music, dance, and food.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+    <div class="carousel-nav">
+      <button class="carousel-prev" onclick="prevNewsSlide()">❮</button>
+      <button class="carousel-next" onclick="nextNewsSlide()">❯</button>
+    </div>
+
+    <!-- News Feed -->
+    <h3 class="section-title">Latest News</h3>
+    <div class="news-feed" id="news-feed">
+      <div class="news-item" data-category="academic">
+        <h4>98% WAEC Pass Rate Achieved</h4>
+        <p>Date: March 1, 2025 - Our students excelled with a 98% pass rate in the 2024 WAEC exams.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+      <div class="news-item" data-category="sports">
+        <h4>Football Team Wins Regional Title</h4>
+        <p>Date: February 20, 2025 - Our football team clinched the regional championship trophy.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+      <div class="news-item" data-category="events">
+        <h4>Graduation Ceremony 2025</h4>
+        <p>Date: July 15, 2025 - Celebrate the achievements of our graduating class.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+      <div class="news-item" data-category="achievements">
+        <h4>Teacher of the Year Award</h4>
+        <p>Date: January 10, 2025 - Mrs. Sarah Adeyemi honored as National Teacher of the Year 2023.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+      <div class="news-item" data-category="academic">
+        <h4>New Curriculum Launched</h4>
+        <p>Date: March 5, 2025 - Introducing an updated curriculum with a focus on STEM.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <button onclick="prevPage()">Previous</button>
+      <span id="page-info">Page 1 of 2</span>
+      <button onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Event Calendar -->
+    <h3 class="section-title">Event Calendar</h3>
+    <div class="calendar-grid">
+      <div class="calendar-month">
+        <h4>March 2025</h4>
+        <ul>
+          <li><strong>5th:</strong> New Curriculum Launch</li>
+          <li><strong>15th:</strong> Facility Maintenance</li>
+          <li><strong>20th:</strong> Parent-Teacher Meeting</li>
+        </ul>
+      </div>
+      <div class="calendar-month">
+        <h4>April 2025</h4>
+        <ul>
+          <li><strong>15th:</strong> Annual Sports Day</li>
+          <li><strong>20th:</strong> Career Fair</li>
+        </ul>
+      </div>
+      <div class="calendar-month">
+        <h4>May 2025</h4>
+        <ul>
+          <li><strong>10th:</strong> Science Fair</li>
+          <li><strong>20th:</strong> Cultural Day Preparation</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- News Submission -->
+    <h3 class="section-title">Submit Your News</h3>
+    <div class="news-submission">
+      <form id="news-form" onsubmit="handleNewsSubmit(event)">
+        <div class="form-group">
+          <label for="news-title">Title:</label>
+          <input type="text" id="news-title" name="title" placeholder="News Title" required>
+        </div>
+        <div class="form-group">
+          <label for="news-category">Category:</label>
+          <select id="news-category" name="category" required>
+            <option value="academic">Academic</option>
+            <option value="sports">Sports</option>
+            <option value="events">Events</option>
+            <option value="achievements">Achievements</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="news-content">Content:</label>
+          <textarea id="news-content" name="content" rows="6" placeholder="News Content" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="news-image">Upload Image:</label>
+          <input type="file" id="news-image" name="image" accept=".jpg,.png" required>
+        </div>
+        <button type="submit">Submit News</button>
+      </form>
+      <p id="news-message"></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>Winsome Model Schools</h3>
+          <p>Araromi Street, Ifako-Jaiye, Ojooromo, Lagos, Nigeria</p>
+          <p>Phone: +234 803 231 9017</p>
+          <p>Email: info@winsomemodelschools.org</p>
+          <p>Hours: Mon-Fri 8am-6pm, Sat 9am-2pm</p>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <a href="about.html">About Us</a>
+          <a href="academics.html">Academics</a>
+          <a href="admissions.html">Admissions</a>
+          <a href="faculty.html">Faculty & Staff</a>
+          <a href="facilities.html">Facilities</a>
+          <a href="student-life.html">Student Life</a>
+          <a href="news.html">News & Events</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-column">
+          <h3>Explore More</h3>
+          <a href="news.html#calendar">Event Calendar</a>
+          <a href="facilities.html#virtual-tour">Virtual Tour</a>
+          <a href="student-life.html#gallery">Student Gallery</a>
+          <a href="contact.html#newsletter">Newsletter Signup</a>
+        </div>
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f animate-icon"></i></a>
+            <a href="#"><i class="fab fa-twitter animate-icon"></i></a>
+            <a href="#"><i class="fab fa-instagram animate-icon"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in animate-icon"></i></a>
+            <a href="#"><i class="fab fa-youtube animate-icon"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Winsome Model Schools. All Rights Reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">FAQs</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

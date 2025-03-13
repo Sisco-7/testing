@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faculty & Staff - Winsome Model Schools</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Dark Mode Toggle -->
+  <div class="dark-mode-toggle">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html"><img src="winsomite.png" alt="Winsome Model Schools Logo" loading="lazy"></a>
+      </div>
+      <div class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="faculty.html">Faculty & Staff</a></li>
+          <li><a href="facilities.html">Facilities</a></li>
+          <li><a href="student-life.html">Student Life</a></li>
+          <li><a href="news.html">News & Events</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#student-portal" onclick="openStudentPortal()">Student Portal</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Faculty Section -->
+  <section id="faculty" class="container">
+    <h2 class="section-title">Faculty & Staff</h2>
+    <div class="faculty-content">
+      <p>Our faculty comprises highly qualified educators dedicated to nurturing the next generation of leaders. With expertise across various disciplines, our team ensures that every student receives personalized guidance and support.</p>
+      <p>We take pride in our award-winning faculty, many of whom have received national recognition for their contributions to education. Explore our directory to learn more about their qualifications, experience, and areas of expertise.</p>
+    </div>
+
+    <!-- Faculty Search and Filter -->
+    <div class="faculty-search-filter">
+      <div class="search-bar">
+        <input type="text" id="faculty-search" placeholder="Search by name or subject..." onkeyup="searchFaculty()">
+        <i class="fas fa-search"></i>
+      </div>
+      <div class="faculty-filter">
+        <label for="faculty-filter">Filter by Department:</label>
+        <select id="faculty-filter" onchange="filterFaculty()">
+          <option value="all">All</option>
+          <option value="science">Science</option>
+          <option value="arts">Arts & Humanities</option>
+          <option value="vocational">Vocational</option>
+          <option value="admin">Administration</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Faculty Grid -->
+    <div class="faculty-grid" id="faculty-grid">
+      <div class="faculty-card" data-category="science" data-name="Mr. Alex Brown">
+        <img src="https://via.placeholder.com/150?text=Mr.+Alex+Brown" alt="Mr. Alex Brown" loading="lazy">
+        <h4>Mr. Alex Brown</h4>
+        <p>Mathematics Teacher<br>M.Sc. in Mathematics</p>
+        <p>Experience: 15 years</p>
+        <p>Specialization: Calculus, Algebra</p>
+        <a href="mailto:alex.brown@winsomemodelschools.org" class="contact-link">Contact</a>
+      </div>
+      <div class="faculty-card" data-category="science" data-name="Mrs. Sarah Adeyemi">
+        <img src="https://via.placeholder.com/150?text=Mrs.+Sarah+Adeyemi" alt="Mrs. Sarah Adeyemi" loading="lazy">
+        <h4>Mrs. Sarah Adeyemi</h4>
+        <p>Science Coordinator<br>Ph.D. in Chemistry</p>
+        <p>Experience: 20 years</p>
+        <p>Specialization: Organic Chemistry, Lab Techniques</p>
+        <a href="mailto:sarah.adeyemi@winsomemodelschools.org" class="contact-link">Contact</a>
+      </div>
+      <div class="faculty-card" data-category="science" data-name="Mr. Peter Okafor">
+        <img src="https://via.placeholder.com/150?text=Mr.+Peter+Okafor" alt="Mr. Peter Okafor" loading="lazy">
+        <h4>Mr. Peter Okafor</h4>
+        <p>Physics Teacher<br>M.Sc. in Physics</p>
+        <p>Experience: 12 years</p>
+        <p>Specialization: Mechanics, Electromagnetism</p>
+        <a href="mailto:peter.okafor@winsomemodelschools.org" class="contact-link">Contact</a>
+      </div>
+      <div class="faculty-card" data-category="arts" data-name="Mrs. Emily Green">
+        <img src="https://via.placeholder.com/150?text=Mrs.+Emily+Green" alt="Mrs. Emily Green" loading="lazy">
+        <h4>Mrs. Emily Green</h4>
+        <p>Literature Teacher<br>B.A. in English</p>
+        <p>Experience: 10 years</p>
+        <p>Specialization: Shakespeare, African Literature</p>
+        <a href="mailto:emily.green@winsomemodelschools.org" class="contact-link">Contact</a>
+      </div>
+      <div class="faculty-card" data-category="arts" data-name="Mr. Samuel Adewale">
+        <img src="https://via.placeholder.com/150?text=Mr.+Samuel+Adewale" alt="Mr. Samuel Adewale" loading="lazy">
+        <h4>Mr. Samuel Adewale</h4>
+        <p>History Teacher<br>M.A. in History</p>
+        <p>Experience: 8 years</p>
+        <p>Specialization: Nigerian History, World Wars</p>
+        <a href="mailto:samuel.adewale@winsomemodelschools.org" class="contact-link">Contact</a>
+      </div>
+      <div class="faculty-card" data-category="arts" data-name="Mrs. Grace Ojo">
+        <img src="https://via.placeholder.com/150?text=Mrs.+Grace+Ojo" alt="Mrs. Grace Ojo" loading="lazy">
+        <h4>Mrs. Grace Ojo</h4>
+        <p>Government Teacher<br>B.Sc. in Political Science</p>
+        <p>Experience: 7 years</p>
+        <p>Specialization: Democracy, International Relations</p>
+        <a href="mailto:grace.ojo@winsomemodelschools.org" class="contact-link">Contact</a>
+      </div>
+      <div class="faculty-card" data-category="vocational" data-name="Mr. Daniel Eze">
+        <img src="https://via.placeholder.com/150?text=Mr.+Daniel+Eze" alt="Mr. Daniel Eze" loading="lazy">
+        <h4>Mr. Daniel Eze</h4>
+        <p>ICT Instructor<br>B.Tech in Computer Science</p>
+        <p>Experience: 5 years</p>
+        <p>Specialization: Web Development, Cybersecurity</p>
+        <a href="mailto:daniel.eze@winsomemodelschools.org" class="contact-link">Contact</a>
+      </div>
+      <div class="faculty-card" data-category="vocational" data-name="Mrs. Funke Alabi">
+        <img src="https://via.placeholder.com/150?text=Mrs.+Funke+Alabi" alt="Mrs. Funke Alabi" loading="lazy">
+        <h4>Mrs. Funke Alabi</h4>
+        <p>Home Economics Teacher<br>B.Sc. in Home Economics</p>
+        <p>Experience: 9 years</p>
+        <p>Specialization: Nutrition, Textile Design</p>
+        <a href="mailto:funke.alabi@winsomemodelschools.org" class="contact-link">Contact</a>
+      </div>
+      <div class="faculty-card" data-category="admin" data-name="Dr. John Adebayo">
+        <img src="https://via.placeholder.com/150?text=Dr.+John+Adebayo" alt="Dr. John Adebayo" loading="lazy">
+        <h4>Dr. John Adebayo</h4>
+        <p>Principal<br>Ph.D. in Educational Leadership</p>
+        <p>Experience: 25 years</p>
+        <p>Specialization: School Administration, Curriculum Design</p>
+        <a href="mailto:john.adebayo@winsomemodelschools.org" class="contact-link">Contact</a>
+      </div>
+      <div class="faculty-card" data-category="admin" data-name="Mrs. Jane Okonkwo">
+        <img src="https://via.placeholder.com/150?text=Mrs.+Jane+Okonkwo" alt="Mrs. Jane Okonkwo" loading="lazy">
+        <h4>Mrs. Jane Okonkwo</h4>
+        <p>Vice Principal<br>M.Ed. in Curriculum Development</p>
+        <p>Experience: 20 years</p>
+        <p>Specialization: Teacher Training, Student Assessment</p>
+        <a href="mailto:jane.okonkwo@winsomemodelschools.org" class="contact-link">Contact</a>
+      </div>
+    </div>
+
+    <!-- Faculty Achievements -->
+    <h3 class="section-title">Faculty Achievements</h3>
+    <div class="achievements-grid">
+      <div class="achievement-card">
+        <h4>National Teacher of the Year</h4>
+        <p>Dr. Sarah Adeyemi received the 2023 National Teacher of the Year award for her contributions to science education.</p>
+      </div>
+    
+        <div class="achievement-card">
+            <h4>Published Research</h4>
+            <p>Mr. Alex Brown published a groundbreaking paper on advanced calculus techniques in the International Journal of Mathematics Education.</p>
+          </div>
+          <div class="achievement-card">
+            <h4>Innovative Teaching Award</h4>
+            <p>Mrs. Emily Green was honored with the 2024 Innovative Teaching Award for her creative approach to teaching literature.</p>
+          </div>
+          <div class="achievement-card">
+            <h4>Community Impact Award</h4>
+            <p>Mr. Daniel Eze led a community coding bootcamp, earning the 2025 Community Impact Award for promoting digital literacy.</p>
+          </div>
+        </div>
+  
+        <!-- Faculty Development Programs -->
+        <h3 class="section-title">Faculty Development Programs</h3>
+        <div class="development-grid">
+          <div class="development-card">
+            <h4>Annual Training Workshops</h4>
+            <p>We conduct yearly workshops on modern teaching methodologies, technology integration, and student engagement strategies.</p>
+            <p>Recent Topics: AI in Education, Inclusive Teaching, Gamification</p>
+          </div>
+          <div class="development-card">
+            <h4>International Exchange Programs</h4>
+            <p>Our faculty participate in exchange programs with schools in the UK and USA to learn global best practices.</p>
+            <p>Recent Destinations: London, Boston</p>
+          </div>
+          <div class="development-card">
+            <h4>Research Grants</h4>
+            <p>We provide grants for faculty to conduct research in education, science, and technology.</p>
+            <p>Recent Projects: STEM Education, Digital Learning Tools</p>
+          </div>
+        </div>
+  
+        <!-- Faculty Testimonials -->
+        <h3 class="section-title">What Our Faculty Say</h3>
+        <div class="faculty-testimonials">
+          <div class="testimonial-card">
+            <p>"Teaching at Winsome has been a rewarding experience. The support for professional growth is unparalleled."</p>
+            <span>– Mrs. Sarah Adeyemi, Science Coordinator</span>
+          </div>
+          <div class="testimonial-card">
+            <p>"I love the collaborative environment here. It’s a place where both teachers and students thrive."</p>
+            <span>– Mr. Alex Brown, Mathematics Teacher</span>
+          </div>
+          <div class="testimonial-card">
+            <p>"Winsome encourages innovation, allowing me to experiment with new teaching methods."</p>
+            <span>– Mrs. Emily Green, Literature Teacher</span>
+          </div>
+        </div>
+      </section>
+  
+      <!-- Footer -->
+      <footer>
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-column">
+              <h3>Winsome Model Schools</h3>
+              <p>Araromi Street, Ifako-Jaiye, Ojooromo, Lagos, Nigeria</p>
+              <p>Phone: +234 803 231 9017</p>
+              <p>Email: info@winsomemodelschools.org</p>
+              <p>Hours: Mon-Fri 8am-6pm, Sat 9am-2pm</p>
+            </div>
+            <div class="footer-column">
+              <h3>Quick Links</h3>
+              <a href="about.html">About Us</a>
+              <a href="academics.html">Academics</a>
+              <a href="admissions.html">Admissions</a>
+              <a href="faculty.html">Faculty & Staff</a>
+              <a href="facilities.html">Facilities</a>
+              <a href="student-life.html">Student Life</a>
+              <a href="news.html">News & Events</a>
+              <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-column">
+              <h3>Explore More</h3>
+              <a href="news.html#calendar">Event Calendar</a>
+              <a href="facilities.html#virtual-tour">Virtual Tour</a>
+              <a href="student-life.html#gallery">Student Gallery</a>
+              <a href="contact.html#newsletter">Newsletter Signup</a>
+            </div>
+            <div class="footer-column">
+              <h3>Follow Us</h3>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f animate-icon"></i></a>
+                <a href="#"><i class="fab fa-twitter animate-icon"></i></a>
+                <a href="#"><i class="fab fa-instagram animate-icon"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in animate-icon"></i></a>
+                <a href="#"><i class="fab fa-youtube animate-icon"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>© 2025 Winsome Model Schools. All Rights Reserved.</p>
+            <div class="footer-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">FAQs</a>
+              <a href="#">Accessibility</a>
+              <a href="#">Sitemap</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+  
+      <!-- Scripts -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+      <script src="script.js" defer></script>
+    </body>
+  </html>
